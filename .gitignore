@@ -1,0 +1,4 @@
+.DS_Store
+Procfile.staging
+node_modules/
+.next/
