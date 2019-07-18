@@ -28,6 +28,6 @@ export default function(props: ListingsProps) {
   )
 
   return (
-    <ul>{listItems}</ul>
+    <ul className="list-disc ml-8 mt-3 mb-3">{listItems}</ul>
   )
 }

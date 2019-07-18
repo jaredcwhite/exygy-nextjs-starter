@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 
 const linkStyle = {
@@ -5,14 +6,15 @@ const linkStyle = {
 };
 
 const Header = () => (
-  <div>
+  <nav className="mb-4">
+    <strong style={linkStyle}>Next Starter</strong>
     <Link href="/">
       <a style={linkStyle}>Home</a>
     </Link>
     <Link href="/about">
       <a style={linkStyle}>About</a>
     </Link>
-  </div>
+  </nav>
 );
 
 export default Header;

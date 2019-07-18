@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
@@ -18,6 +20,12 @@ module.exports = ({ config }) => {
       },
     ],
   });
+  config.module.rules.push({
+    test: /\.css$/,
+    loaders: ['postcss-loader'],
+    include: path.resolve(__dirname, '../')
+  });
+  config.resolve.alias['@'] = path.dirname(path.resolve(__dirname))
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
 };

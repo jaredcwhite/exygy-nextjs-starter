@@ -10,7 +10,7 @@ listings.push(thirdListing)
 
 const Index = () => (
   <Layout>
-    <p>Hello Next.js</p>
+    <h1>Hello Next.js</h1>
     <Listings listings={listings} />
     <hr/>
   </Layout>
