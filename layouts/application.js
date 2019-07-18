@@ -1,4 +1,5 @@
 import Header from '../components/header';
+import "../assets/style.scss"
 
 const layoutStyle = {
   margin: 20,

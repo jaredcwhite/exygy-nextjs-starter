@@ -6,7 +6,7 @@ export default function Listing() {
 
   return (
     <Layout>
-      <h1>Listing Id: {router.query.id}</h1>
+      <h1 className="title">Listing Id: {router.query.id}</h1>
       <p>This is the listing content.</p>
     </Layout>
   );
