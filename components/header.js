@@ -1,18 +1,25 @@
-import Link from 'next/link';
-
-const linkStyle = {
-  marginRight: 15
-};
+import Link from "next/link"
 
 const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
-);
+  <header>
+    <nav>
+      <Link href="/">
+        <a style={{fontSize: "1.5rem", fontWeight: "900"}}>Next.js Demo</a>
+      </Link>
+      <ul>
+        <li>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+)
 
-export default Header;
+export default Header

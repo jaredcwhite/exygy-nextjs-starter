@@ -16,11 +16,11 @@ export default function(props: ListingsProps) {
 
   const listItems = listings.map(listing =>
     <li key={listing.id}>
-      <Link href="listings/[id]" as={`/listings/${listing.id}`}>
+      <Link href={`listings/${listing.id}`}>
         <a>
           {listing.name}
           {listing.featured &&
-            <span style={{marginLeft: '20px'}}><em>Featured</em></span>
+            <span style={{marginLeft: '20px', fontStyle: 'italic'}}>Featured</span>
           }
         </a>
       </Link>
