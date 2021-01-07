@@ -11,7 +11,7 @@ interface ListingsProps {
   listings: Array<Listing>;
 }
 
-export default function(props: ListingsProps) {
+export default function Listings(props: ListingsProps) {
   const listings = props.listings
 
   const listItems = listings.map(listing =>
