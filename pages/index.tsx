@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Layout from "../layouts/application"
 import Listings, { Listing } from "../components/Listings"
 
@@ -11,6 +12,10 @@ listings.push(thirdListing)
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>Home Page</title>
+      </Head>
+
       <h1>Welcome to Next.js</h1>
       <Listings listings={listings} />
     </Layout>
