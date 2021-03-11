@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 export interface Listing {
   id: number;
@@ -14,7 +13,6 @@ interface ListingsProps {
 
 export default function Listings(props: ListingsProps) {
   const listings = props.listings
-  const router = useRouter()
 
   const listItems = listings.map(listing =>
     <li key={listing.id}>
