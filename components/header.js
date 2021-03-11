@@ -17,6 +17,16 @@ const Header = () => (
             <a>About</a>
           </Link>
         </li>
+        <li>
+          Langs: &nbsp;
+          <Link href="/" locale={false}>
+            <a>English</a>
+          </Link>
+          &nbsp;|&nbsp;
+          <Link href="/zh" locale={false}>
+            <a>Chinese</a>
+          </Link>
+        </li>
       </ul>
     </nav>
   </header>
