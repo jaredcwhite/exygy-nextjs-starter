@@ -6,13 +6,7 @@ import { AppSubmissionContext } from "../lib/AppSubmissionContext"
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { addTranslation } from "../lib/translator"
 
-import generalTranslations from "../src/locales/general.json"
-import chineseTranslations from "../src/locales/zh.json"
-
-const translations = {
-  general: generalTranslations,
-  zh: chineseTranslations
-} as Record<string, any>
+import { translations, overrideTranslations } from "../src/translations"
 
 function MyApp({ Component, router, pageProps }: AppProps) {
   const [foobar] = useState({a: 1, b: 2})
@@ -23,6 +17,9 @@ function MyApp({ Component, router, pageProps }: AppProps) {
   addTranslation(translations.general)
   if (locale && locale != "en" && translations[locale]) {
     addTranslation(translations[locale])
+    if (overrideTranslations[locale]) {
+      addTranslation(overrideTranslations[locale])
+    }
   }
 
   useEffect(() => {

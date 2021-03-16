@@ -1,5 +1,6 @@
 {
   "testing": {
-    "key": "CHVAL"
+    "key": "CHVAL",
+    "anotherKey": "zh (anotherKey)"
   }
 }

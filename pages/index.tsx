@@ -11,6 +11,11 @@ export default function Home(props: any) {
 
       <h1>Welcome to Next.js</h1>
       <Listings listings={props.listings} />
+
+      <hr />
+
+      <h2>Static Paths:</h2>
+      <Listings listings={props.staticListings} static />
     </Layout>
   )
 }
@@ -23,5 +28,9 @@ export async function getStaticProps() {
   let thirdListing = {id: 12, name: "Third Listing"}
   listings.push(thirdListing)
 
-  return { props: { listings } }
+  let staticListings: Listing[] = []
+  staticListings.push({id: "first-100", name: "First Listing!"})
+  staticListings.push({id: "second-200", name: "Second Listing"})
+
+  return { props: { listings, staticListings } }
 }
