@@ -1,6 +1,6 @@
 {
   "testing": {
-    "key": "CHVAL",
-    "anotherKey": "zh (anotherKey)"
+    "key": "Value (en)",
+    "anotherKey": "Another Value (zh)"
   }
 }

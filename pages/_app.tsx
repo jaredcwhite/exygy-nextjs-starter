@@ -1,26 +1,24 @@
 import "../styles/index.css"
-//import App from "next/app"
-import { useEffect, useState } from "react"
-import { AppSubmissionContext } from "../lib/AppSubmissionContext"
-
-import type { AppProps /*, AppContext */ } from 'next/app'
+import { useEffect, useMemo, useState } from "react"
+import { AppSubmissionContext, MyObj } from "../lib/AppSubmissionContext"
+import type { AppProps  } from 'next/app'
 import { addTranslation } from "../lib/translator"
-
 import { translations, overrideTranslations } from "../src/translations"
 
 function MyApp({ Component, router, pageProps }: AppProps) {
+  const { locale } = router
   const [foobar] = useState({a: 1, b: 2})
-//  const router = useRouter()
+  const myObj = useMemo(() => new MyObj(foobar), [foobar])
 
-  const locale = router.locale
-
-  addTranslation(translations.general)
-  if (locale && locale != "en" && translations[locale]) {
-    addTranslation(translations[locale])
-    if (overrideTranslations[locale]) {
-      addTranslation(overrideTranslations[locale])
+  useMemo(() => {
+    addTranslation(translations.general, true)
+    if (locale && locale != "en" && translations[locale]) {
+      addTranslation(translations[locale])
+      if (overrideTranslations[locale]) {
+        addTranslation(overrideTranslations[locale])
+      }
     }
-  }
+  }, [locale])
 
   useEffect(() => {
     if (!document.body.dataset.customScriptsLoaded) {
@@ -41,7 +39,8 @@ function MyApp({ Component, router, pageProps }: AppProps) {
   return (
     <AppSubmissionContext.Provider
       value={{
-        foobar: foobar
+        foobar: foobar,
+        myObj: myObj
       }}
     >
       <Component {...pageProps} />
