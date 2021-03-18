@@ -19,7 +19,7 @@ const Layout = props => {
         {props.children}
       </main>
       <footer>
-        Locale: {locale}
+        <strong>Current Locale: {locale}</strong>
       </footer>
     </>
   )
