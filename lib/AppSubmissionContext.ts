@@ -2,7 +2,7 @@ import React from "react"
 
 export class MyObj {
   constructor(foobar: Record<string, any>) {
-    console.info("MyObj init (constructor)")
+    console.info("MyObj init (constructor)", foobar)
   }
 }
 
