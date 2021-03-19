@@ -29,8 +29,8 @@ export async function getStaticProps() {
   listings.push(thirdListing)
 
   let staticListings: Listing[] = []
-  staticListings.push({id: "first-100", name: "First Listing!"})
-  staticListings.push({id: "second-200", name: "Second Listing"})
+  staticListings.push({id: "100/first", name: "First Listing!"})
+  staticListings.push({id: "200/second", name: "Second Listing"})
 
   return { props: { listings, staticListings } }
 }
